@@ -221,4 +221,28 @@ console.log(procesar([1, 2, 3], n => n * 2));
 
 
 
-/* Practica, llamada a un objeto o a una lista   */
+/* vamos a practicar ejercicios con los metodos .map() .filter() .reduce() . fid() estos son metodos que ya vienen incorporados en js,
+se llaman "metodos" (y no simplemente "funciones") porque estan pegados a un objeto, como por ejemplo un array   */
+
+/* .map()  TRANSFORMAR
+   idea: recorre el array y transforma cada elemento, devolvierndo un array nuevo del mismo tamaño.
+   
+   piensa en una fila de personas donde a cada una le entregas un regalo distinto según una regla. 
+   Nadie se queda sin regalo, y nadie se va de la fila --- solo cambia lo que cada uno tiene en las manos.*/
+
+const numerosTransformar = [1, 2, 3];
+const dobles = numerosTransformar.map(n => n * 2);
+// [2, 4, 6] -> mismo tamaño (3 elementos), cada uno transformado
+/* se usa cuando: quieres el mismo numero de elementos , pero modificados de alguna forma. */
+
+/* .filter() SELECCIONAR
+idea: recorre un array y decide, elemento por elemento, si se queda o se va según una condición (true o false).
+Devuelve un array nuevo, posiblmente mas pequeño.
+
+piensa en un portero de una fiesta: revisa a cada persona en la fila, y solo deja entrar a las que cumplen el requisito
+(por ejemplo ser mayor de edad.) Lasa demas no entran */
+
+const numerosSeleccionar = [1, 2, 3, 4, 5, 6];
+const pares = numerosSeleccionar.filter(n => n % 2 === 0);
+// [2, 4, 6] -> array más pequeño solo los que cumplieron la condición
+/* Se usa cuando: quieres quedarte solo con los elementos que cumplen algo. */
