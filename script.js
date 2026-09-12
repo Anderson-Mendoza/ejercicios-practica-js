@@ -224,6 +224,9 @@ console.log(procesar([1, 2, 3], n => n * 2));
 /* vamos a practicar ejercicios con los metodos .map() .filter() .reduce() . fid() estos son metodos que ya vienen incorporados en js,
 se llaman "metodos" (y no simplemente "funciones") porque estan pegados a un objeto, como por ejemplo un array   */
 
+
+
+
 /* .map()  TRANSFORMAR
    idea: recorre el array y transforma cada elemento, devolvierndo un array nuevo del mismo tamaño.
    
@@ -235,14 +238,73 @@ const dobles = numerosTransformar.map(n => n * 2);
 // [2, 4, 6] -> mismo tamaño (3 elementos), cada uno transformado
 /* se usa cuando: quieres el mismo numero de elementos , pero modificados de alguna forma. */
 
+
+
+
 /* .filter() SELECCIONAR
 idea: recorre un array y decide, elemento por elemento, si se queda o se va según una condición (true o false).
-Devuelve un array nuevo, posiblmente mas pequeño.
+Devuelve un array nuevo, posiblemente mas pequeño.
 
 piensa en un portero de una fiesta: revisa a cada persona en la fila, y solo deja entrar a las que cumplen el requisito
 (por ejemplo ser mayor de edad.) Lasa demas no entran */
 
 const numerosSeleccionar = [1, 2, 3, 4, 5, 6];
 const pares = numerosSeleccionar.filter(n => n % 2 === 0);
-// [2, 4, 6] -> array más pequeño solo los que cumplieron la condición
+// [2, 4, 6] -> Array más pequeño solo los que cumplieron la condición
 /* Se usa cuando: quieres quedarte solo con los elementos que cumplen algo. */
+
+
+
+
+/* .find () BUSCAR UNO
+idea: recorre el array buscando el primer elemento que cumple una condición, y cuando lo encuentra se detiene y lo devuelve
+no un array, sino ese elemento  solito. Si nadie cumple devuelve undefined.
+
+piensa en buscar tus llaves en un cajón lleno de cosas: en cuanto las encuentras, paras de buscar. No sigues buscando el resto del cajón.*/
+const usuarios = [
+    { id: 1, nombre: "Ana" },
+    { id: 2, nombre: "Luis" }
+];
+const usuario = usuarios.find(u => u.id === 2);
+// { id: 2, nombre: "Luis"} -> Un solo objeto, no un array
+// se usa cuando: quieres un elemento especifico, no una lista.
+
+
+
+/* .reduce() ACUMULAR / RESUMIR
+ idea: recorre el array y va combinando todo en un solo valor final (una suma, un promedio, un objeto armado, lo que sea).
+  Es el mas flexible y el mas dificil de entender al principio.
+  
+  Piensa en una alcancia: metes monedas una por una, y al final tienes un solo número: el total acumulado */
+//const numerosAcumular = [1, 2, 3, 4];
+//const suma = numerosAcumular.reduce((acumulador, actual) => acumulador + actual, 0);
+// 10 -> un solo valor final, no un array
+// acumulador -> lo que se ha ido acumulando hasta en momento
+// actual -> el elemento que se esta procesando en ese momento
+// 0 -> el valor inicial del acumulador (antes de empezar a recorrer)
+// se usa cuando: quieres reducir todo el array a un solo resultado (suma, conteo, objeto, etc). 
+
+
+// ejercicios 
+
+/* 1.  .map() -> crea un array solo con los nombres de los productos. */
+
+const PRODUCTOS = [
+    { nombre: "Laptop", precio: 1200, stock: 5 },
+    { nombre: "Mouse", precio: 25, stock: 0 },
+    { nombre: "Teclado", precio: 45, stock: 12 },
+    { nombre: "Monitor", precio: 300, stock: 3 }
+];
+
+const nombreProductos = PRODUCTOS.map(nombres => nombres.nombre);
+console.log(nombreProductos);
+
+/* 2.  .filter() -> obten solo los productos que tienen stock disponible (stock > 0). */
+
+const STOCK_DISPONIBLE = PRODUCTOS.filter(stocks => stocks.stock > 0);
+console.log(STOCK_DISPONIBLE);
+
+/* 3.  .find() -> Encuentra el producto llamado "Teclado". */
+
+const ENCONTRAR_PRODUCTO = PRODUCTOS.find(producto => producto.nombre === "Teclado");
+console.log(ENCONTRAR_PRODUCTO);
