@@ -205,7 +205,6 @@ for (let i = 0; i < nombres.length; i++) {
  y aplique esa función a cada número usando un for, devolviendo el nuevo
  array (esto es básicamente reinventar .map() a mano, para que entiendas cómo funciona por dentro). */
 
-
 function procesar(array, funcion) {
     let resultado = [];
     for (let i = 0; i < array.length; i++) {
@@ -308,3 +307,19 @@ console.log(STOCK_DISPONIBLE);
 
 const ENCONTRAR_PRODUCTO = PRODUCTOS.find(producto => producto.nombre === "Teclado");
 console.log(ENCONTRAR_PRODUCTO);
+
+/* 4. .reduce() -> Calcula el valor total del inventario (precio x stock de cada producto, sumado). */
+
+const CALCULAR_VALOR = PRODUCTOS.reduce((acumulador, producto) => {
+    return acumulador + (producto.precio * producto.stock);
+}, 0);
+console.log(CALCULAR_VALOR);
+
+
+//* 5.  Obten todos los productos que cuesten mas de 50, usando .filter() y .map() juntos. */
+
+const PRODUCTOS_CAROS = PRODUCTOS
+    .filter(producto => producto.precio > 50)
+    .map(producto => producto.nombre)
+
+console.log(PRODUCTOS_CAROS);
