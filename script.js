@@ -351,7 +351,7 @@ console.log(BUSCAR_ESTUDIANTE);
 /* Opcion 2  */
 
 function buscarNombre(nombreABuscar) {
-    return estudiantes.find(estudiante => estudiante.nombre === nombreABuscar)?.nombre
+    return estudiantes.find(estudiante => estudiante.nombre === nombreABuscar)?.nombre || "Nombre no encontrado"
 };
 
 const RESULTADO = buscarNombre("Mateo");
