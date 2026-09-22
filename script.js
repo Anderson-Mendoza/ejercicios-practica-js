@@ -323,3 +323,45 @@ const PRODUCTOS_CAROS = PRODUCTOS
     .map(producto => producto.nombre)
 
 console.log(PRODUCTOS_CAROS);
+
+/* mas ejercicios  */
+
+const estudiantes = [
+    { nombre: "Camila", nota: 4.5, curso: "Matematicas" },
+    { nombre: "Andres", nota: 2.8, curso: "Matematicas" },
+    { nombre: "Sofia", nota: 3.9, curso: "Historia" },
+    { nombre: "Mateo", nota: 4.9, curso: "Historia" },
+    { nombre: "Valentina", nota: 2.5, curso: "Matematicas" }
+];
+/* 1. Crea un array con el nombre de todos los estudiantes */
+
+const NOMBRES_ESTUDIANTES = estudiantes.map(nombres => nombres.nombre);
+console.log(NOMBRES_ESTUDIANTES)
+
+/* 2. Obtén solo los estudiantes que aprobaron (nota > 3.0). */
+
+const NOTA_ESTUDIANTES = estudiantes.filter(notas => notas.nota > 3);
+console.log(NOTA_ESTUDIANTES);
+
+/* 3. Encuentra estudiante llamado  "Mateo"   */
+
+const BUSCAR_ESTUDIANTE = estudiantes.find(estudiante => estudiante.nombre === "Mateo");
+console.log(BUSCAR_ESTUDIANTE);
+
+/* Opcion 2  */
+
+function buscarNombre(nombreABuscar) {
+    return estudiantes.find(estudiante => estudiante.nombre === nombreABuscar)?.nombre
+};
+
+const RESULTADO = buscarNombre("Mateo");
+console.log(RESULTADO);
+
+const RESULTADO2 = buscarNombre("Sofia");
+console.log(RESULTADO2);
+
+
+
+
+
+
