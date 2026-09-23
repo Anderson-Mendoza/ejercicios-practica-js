@@ -335,7 +335,7 @@ const estudiantes = [
 ];
 /* 1. Crea un array con el nombre de todos los estudiantes */
 
-const NOMBRES_ESTUDIANTES = estudiantes.map(nombres => nombres.nombre);
+const NOMBRES_ESTUDIANTES = estudiantes.map(estudiante => estudiante.nombre);
 console.log(NOMBRES_ESTUDIANTES)
 
 /* 2. Obtén solo los estudiantes que aprobaron (nota > 3.0). */
@@ -359,6 +359,15 @@ console.log(RESULTADO);
 
 const RESULTADO2 = buscarNombre("Sofia");
 console.log(RESULTADO2);
+
+/* 4. Calcula el promedio general de todas las notas (suma todas las notas y divide entre la cantidas de estudiantes) */
+
+const SUMA_NOTAS = estudiantes.reduce((acumulador, estudiante) => {
+    return acumulador + estudiante.nota
+}, 0)
+
+const PROMEDIO = SUMA_NOTAS / estudiantes.length
+console.log(PROMEDIO);
 
 
 
