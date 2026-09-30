@@ -327,11 +327,11 @@ console.log(PRODUCTOS_CAROS);
 /* mas ejercicios  */
 
 const estudiantes = [
-    { nombre: "Camila", nota: 4.5, curso: "Matematicas" },
-    { nombre: "Andres", nota: 2.8, curso: "Matematicas" },
+    { nombre: "Camila", nota: 4.5, curso: "Matemáticas" },
+    { nombre: "Andres", nota: 2.8, curso: "Matemáticas" },
     { nombre: "Sofia", nota: 3.9, curso: "Historia" },
     { nombre: "Mateo", nota: 4.9, curso: "Historia" },
-    { nombre: "Valentina", nota: 2.5, curso: "Matematicas" }
+    { nombre: "Valentina", nota: 2.5, curso: "Matemáticas" }
 ];
 /* 1. Crea un array con el nombre de todos los estudiantes */
 
@@ -369,8 +369,34 @@ const SUMA_NOTAS = estudiantes.reduce((acumulador, estudiante) => {
 const PROMEDIO = SUMA_NOTAS / estudiantes.length
 console.log(PROMEDIO);
 
+/* 5. Obtén solo los estudiantes del curso "Matematicas" */
+
+const CURSO_MATEMATICAS = estudiantes.filter(estudiante => estudiante.curso === "Matemáticas");
+console.log(CURSO_MATEMATICAS);
+
+/* 6. Obtén los nombres de los estudiantes que reprobaron (nota < 3.0), usando filter + map */
+
+const ESTUDIANTES_REPROBADOS = estudiantes
+
+    .filter(estudiante => estudiante.nota < 3.0)
+    .map(estudiante => estudiante.nombre)
+
+console.log(ESTUDIANTES_REPROBADOS);
+
+/* 7. Calcula el promedio de notas, pero solo del curso de "Historia"    */
+
+const ESTUDIANTES_HISTORIA = estudiantes.filter(estudiante => estudiante.curso === "Historia")
+
+const NOTAS_HISTORIA = ESTUDIANTES_HISTORIA.reduce((acumulador, estudiante) => {
+    return acumulador + estudiante.nota
+}, 0);
+
+const PROMEDIO_HISTORIA = NOTAS_HISTORIA / ESTUDIANTES_HISTORIA.length;
+console.log(PROMEDIO_HISTORIA);
 
 
+
+/* 8. Crea un objeto que cuente cuantos estudiantes hay por curso. */
 
 
 
