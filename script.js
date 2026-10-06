@@ -399,4 +399,38 @@ console.log(PROMEDIO_HISTORIA);
 /* 8. Crea un objeto que cuente cuantos estudiantes hay por curso. */
 
 
+//bucle for
+const conteo = {}
 
+for (let i = 0; i < estudiantes.length; i++) {
+    const curso = estudiantes[i].curso; // "Matematicas", "Historia", etc.
+
+    if (conteo[curso]) {
+
+        // si el curso YA existe en el objeto, le sumamos 1
+        conteo[curso] = conteo[curso] + 1;
+    } else {
+        //si el curso NO existe todavia, lo creamos en 1
+        conteo[curso] = 1;
+    }
+}
+
+console.log(conteo);
+
+// metodo reduce  
+
+const conteo2 = estudiantes.reduce((acumulador, estudiante) => {
+    const curso = estudiante.curso;
+
+    if (acumulador[curso]) {
+        acumulador[curso] = acumulador[curso] + 1;
+    } else {
+        acumulador[curso] = 1;
+    }
+
+    return acumulador;
+
+}, {})
+
+
+console.log(conteo2);
