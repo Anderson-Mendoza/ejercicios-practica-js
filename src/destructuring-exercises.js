@@ -37,14 +37,14 @@ const { autor } = libro;
 
 const coordenadas = [4.71, - 74.07, "Bogotá"];
 
-const [primero, segundo, tercero] = coordenadas;
+const [primero, segundo] = coordenadas;
 console.log(primero);
 console.log(segundo);
 
 // 3. Convierte esta función para que use destructuring en sus parámetros, en vez de acceder con punto
 
 function saludar({ nombre, edad }) {
-    return "Hola " + nombre + ", tienes " + edad + " años";
+    return `Hola " ${nombre}, tienes ${edad}, años`;
 }
 
 console.log(saludar({ nombre: "Ana", edad: 25 }));
