@@ -16,4 +16,23 @@ const actualizada = { ...persona, edad: 31, } // sobrescribe la propiedad edad 3
 // 1. crea un array nuevo con los mismos numeros más el 5 al final, usando spread:
 const ejerciciosNumeros = [1, 2, 3];
 const ejerciciosNumerosSpread = [...ejerciciosNumeros, 5];
-console.log(ejerciciosNumeros);
+console.log(ejerciciosNumerosSpread);
+
+
+// =========================================================================
+
+const frutasEjemplo = ["Manzana", "Pera"];
+const masFrutas = [...frutasEjemplo, "Uva", "Mango"];
+console.log("se añadieron más frutas con spread operator", masFrutas);
+console.log("lista de frutas antes del spread operator", frutasEjemplo);
+
+const ciudadesEjemplo = ["Ibague", "Cajamarca", "Armenia", "Pereira"]
+const ciudadesEjemploSpread = [...ciudadesEjemplo, "Santa Rosa", "Manizales"];
+console.log("ejemplo adicional utilizando spread operator", ciudadesEjemploSpread);
+console.log("ejemplo adicional sin utilizar spread operator", ciudadesEjemplo);
+
+
+// el spread operator sirve tambien para unir dos arrays
+/*  ...frutasEjemplo significa: "saca todos los elementos de frutasEjemplo y ponlos aqui".
+   asi creas un array nuevo sin tocar el original (a diferencia de push(), que modifica el array original)*/
+
