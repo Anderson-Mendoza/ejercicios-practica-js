@@ -26,13 +26,14 @@ console.log("Utilizando rest:", sumar(1, 2, 3, 4)); //10
 
 
 //En destructuring:
-const [primero, ...resto] = [10, 20, 30, 40];
-console.log(primero); // 10
+const [primeros, ...resto] = [10, 20, 30, 40];
+console.log(primeros); // 10
 console.log(resto);   // [20, 30, 40]
 
-const { nombre, ...otros } = { nombre: "Ana", edad: 25, ciudad: "Bogotá" };
-console.log(nombre); // "Ana"
+const { nombre: nombreExtraido, ...otros } = { nombre: "Ana", edad: 25, ciudad: "Bogotá" };
+console.log(nombreExtraido); // "Ana"
 console.log(otros);  // { edad: 25, ciudad: "Bogotá" }
+
 
 
 
@@ -88,8 +89,30 @@ function multiplicar(factor, ...listaMultiplicar) {
 
 console.log(multiplicar(2, 1, 2, 3)); // 2, 4, 6
 console.log(multiplicar(3, 1, 2, 3)); // 3, 6, 9
-console.log(multiplicar(10, 5, 6, 7, 8,)); // 50, 60, 70, 80
+console.log(multiplicar(10, 5, 6, 7, 8)); // 50, 60, 70, 80
 
+/*5. Dado este array de productos, crea uno nuevo donde:
+       1. Cambies el stock del primer producto a 10
+       2. Agregues un produnto mas al final
+       3. No modifiques el original */
+
+
+const productos = [
+   { nombre: "Laptop", stock: 5 },
+   { nombre: "Mouse", stock: 0 }
+];
+
+const resultadoDelMap = productos.map(producto => {
+   if (producto.nombre === "Laptop") {
+      return { ...producto, stock: 10 };
+   }
+   return producto;
+})
+
+const productoNuevo = { nombre: "Teclado", stock: 2 };
+const productosFinales = [...resultadoDelMap, productoNuevo];
+console.log(productosFinales);
+console.log(productos);
 
 
 
