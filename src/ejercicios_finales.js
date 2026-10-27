@@ -15,8 +15,8 @@ const tareas = [
 //1. filter + map: Obten un array solo con los titulos de las tareas pendientes (completada: false)
 
 const titulosPendientes = tareas
-    .filter((tareas) => tareas.completada === false)
-    .map((tareas) => tareas.titulo);
+    .filter(tareas => tareas.completada === false)
+    .map(tareas => tareas.titulo);
 
 console.log("Ejercicio 1 map(), filter(): ", titulosPendientes);
 
@@ -29,6 +29,10 @@ console.log("Ejercicio 2 find(), destructuring: ", tituloTarea, horas);
 
 
 //3. map + destructuring en el parámetro: crea un array de strings con este formato: "Estudiar JS (2h)", usando ({ titulo, horas }) => ... y template literals.
+
+const arrDeString = tareas.map(({ titulo, horas }) => `${titulo} (${horas}h)`);
+console.log(arrDeString);
+
 
 //4. reduce: calcula el total de horas de todas las tareas. (Si te trabas, hazlo primero con un for y luego tradúcelo, como hicimos antes.)
 
