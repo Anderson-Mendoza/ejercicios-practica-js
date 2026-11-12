@@ -36,6 +36,25 @@ console.log(arrDeString);
 
 //4. reduce: calcula el total de horas de todas las tareas. (Si te trabas, hazlo primero con un for y luego tradúcelo, como hicimos antes.)
 
+const conteoDeHoras = tareas.reduce((acumulador, tarea) => {
+    return acumulador + tarea.horas
+}, 0);
+
+console.log(conteoDeHoras);
+
+
 //5. map + spread: crea un array nuevo donde la tarea con id: 2 quede con completada: true, sin modificar el original. Imprime ambos para comprobarlo.
 
-//6. Reto (spread + filter): crea un array nuevo que tenga todas las tareas originales más una tarea nueva con id: 5, y luego, de ese array nuevo, saca solo las que tengan horas >= 3.
+const tareasActualizadas = tareas.map(tarea => {
+    if (tarea.id === 2) {
+        return { ...tarea, completada: true };
+    }
+    return tarea
+})
+
+console.log(tareas);
+console.log(tareasActualizadas);
+
+
+
+//6. Reto (spread + filter): crea un array nuevo que tenga todas las tareas originales más una tarea nueva con id: 5, y luego, de ese array nuevo, saca solo las que tengan horas 
